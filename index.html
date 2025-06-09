@@ -1,135 +1,664 @@
-0<!DOCTYPE html>
-<html lang="ar">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MrGamingX & MaroGamerYT</title>
   <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: url('peakpx.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --dark-overlay: rgba(0, 0, 0, 0.8);
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --text-primary: #ffffff;
+      --text-secondary: #e0e0e0;
+      --accent-color: #00ffe5;
+      --hover-color: #ff6b6b;
+    }
+
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
+
+    /* Professional spacing and typography */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      letter-spacing: 0.3px;
+    }
+
+    /* Enhanced professional styling */
+    .professional-text {
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Better email styling */
+    .email-link {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 12px 25px;
+      border: 2px solid var(--accent-color);
+      border-radius: 30px;
+      display: inline-block;
+      margin: 10px;
+      transition: all 0.3s ease;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('peakpx.jpg') no-repeat center center;
+      background-size: cover;
+      opacity: 0.3;
+      z-index: -1;
+    }
+
+    /* Animated particles background */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(180deg); }
+    }
+
+    /* Header Styles */
     header {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 20px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
       text-align: center;
     }
+
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+      text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+      animation: glow 2s ease-in-out infinite alternate;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
+
+    @keyframes glow {
+      from { filter: brightness(1); }
+      to { filter: brightness(1.2); }
+    }
+
     nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
-      margin: 15px 0;
+      gap: 15px;
     }
+
     nav a {
-      color: #00ffe5;
+      color: var(--text-primary);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 25px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
+
+    nav a:hover {
+      background: var(--accent-gradient);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(79, 172, 254, 0.4);
+      border-color: var(--accent-color);
+    }
+
+    /* Section Styles */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
     section {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-      background: rgba(0, 0, 0, 0.6);
-      border-radius: 15px;
-      margin-bottom: 20px;
+      margin: 40px 0;
+      padding: 40px;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border-radius: 20px;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      animation: slideInUp 0.6s ease-out;
     }
-    iframe {
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
       width: 100%;
-      max-width: 600px;
-      height: 315px;
-      border: none;
+      height: 2px;
+      background: var(--accent-gradient);
+      animation: shimmer 3s ease-in-out infinite;
     }
-    .downloads a, .gamejolt a, .form-link a {
+
+    @keyframes shimmer {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      background: var(--secondary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    /* Video Section */
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .video-wrapper {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .video-wrapper:hover {
+      transform: scale(1.02);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 15px;
+    }
+
+    /* Download Links */
+    .downloads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .download-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, var(--accent-color), transparent);
+      animation: rotate 4s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .download-card:hover::before {
+      opacity: 0.1;
+    }
+
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
+    }
+
+    .download-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 255, 229, 0.2);
+      border-color: var(--accent-color);
+    }
+
+    .download-card a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
       display: block;
-      color: #00ff99;
-      margin: 10px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .download-card:hover a {
+      color: var(--accent-color);
+    }
+
+    /* GameJolt and Other Links */
+    .link-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 15px 0;
+      transition: all 0.3s ease;
+    }
+
+    .link-card:hover {
+      background: var(--accent-gradient);
+      transform: translateX(10px);
+      box-shadow: 0 15px 30px rgba(79, 172, 254, 0.3);
+    }
+
+    .link-card a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* About Section */
+    .about p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    .channel-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .channel-link {
+      background: var(--secondary-gradient);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(240, 147, 251, 0.3);
+    }
+
+    .channel-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(240, 147, 251, 0.5);
+    }
+
+    /* Contact Section */
+    .contact-info {
+      text-align: center;
       font-size: 1.1rem;
     }
+
+    .contact-info p {
+      margin: 15px 0;
+    }
+
+    .email-link {
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 20px;
+      border: 2px solid var(--accent-color);
+      border-radius: 25px;
+      display: inline-block;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .email-link:hover {
+      background: var(--accent-color);
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
     footer {
-      background: rgba(0, 0, 0, 0.7);
+      background: var(--dark-overlay);
       text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-      color: #ccc;
+      padding: 30px 20px;
+      margin-top: 50px;
+      border-top: 1px solid var(--glass-border);
+      font-size: 1rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      section {
+        padding: 25px 20px;
+        margin: 20px 0;
+      }
+      
+      nav {
+        gap: 10px;
+      }
+      
+      nav a {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+      }
+      
+      .downloads-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .channel-links {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
-<body style="background: url('peakpx.jpg');" type=image/jpg>
+<body>
+  <!-- Animated particles -->
+  <div class="particles"></div>
+
   <header>
-    <h1>MrGamingX & MaroGamerYT</h1>
-    <nav>
-      <a href="#video">🎥 فيديو جديد</a>
-      <a href="#downloads">📥 تحميل ألعاب</a>
-      <a href="#gamejolt">🕹️ GameJolt</a>
-      <a href="#about">👾 من نحن</a>
-      <a href="#upload">📤 ارفع لعبتك</a>
-      <a href="#contact">📩 تواصل معنا</a>
-      <a href="https://mrgamingx.github.io/Videos/" target="_blank">🎬 فيديوهات</a>
-    </nav>
+    <div class="header-content">
+      <h1>
+        <span>🎮</span>
+        <span>MrGamingX & MaroGamerYT</span>
+        <span>🎮</span>
+      </h1>
+      <nav>
+        <a href="#video">🎥 فيديو جديد</a>
+        <a href="#downloads">📥 تحميل ألعاب</a>
+        <a href="#gamejolt">⚡ GameJolt</a>
+        <a href="#about">👥 من نحن</a>
+        <a href="#upload">📤 ارفع لعبتك</a>
+        <a href="#contact">📧 تواصل معنا</a>
+        <a href="https://mrgamingx.github.io/Videos/" target="_blank">🎬 فيديوهات</a>
+      </nav>
+    </div>
   </header>
 
-  <section class="video" id="video">
-    <h2>آخر فيديو</h2>
-    <iframe src="https://www.youtube.com/embed/tqBbuaiOuBI" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/bw4HIcKt9yk" allowfullscreen></iframe>
-  </section>
+  <div class="container">
+    <section class="video fade-in" id="video">
+      <h2>🎬 آخر فيديو</h2>
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube.com/embed/tqBbuaiOuBI?rel=0&modestbranding=1" 
+            allowfullscreen
+            title="Gaming Video 1">
+          </iframe>
+        </div>
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube.com/embed/bw4HIcKt9yk?rel=0&modestbranding=1" 
+            allowfullscreen
+            title="Gaming Video 2">
+          </iframe>
+        </div>
+      </div>
+    </section>
 
-  <section class="downloads" id="downloads">
-    <h2>تحميل ألعاب</h2>
-    <a href="https://www.mediafire.com/file/16rxtg22hl9j3sq/Geometry_Dash_v2.204a_By_Mr%252C_Gaming-X.rar/file" target="_blank">🎮 تحميل Geometry Dash 2.2 PC</a>
-    <a href="https://www.mediafire.com/file/y7homu610vbegt2/Retro+Pack.zip/file" target="_blank">🕹️ تحميل Retro Games Pack PC</a>
-    <a href="https://www.mediafire.com/file/uh1gcn2yf879aiz/Minecraft+Pack.zip/file" target="_blank">🌍 تحميل Minecraft PC</a>
-    <a href="https://www.mediafire.com/file/mda1flproo5x25d/pocketfighterex-v0.3.3-32bit.zip/file" target="_blank">🌍 تحميل Pocket Fighter EX v0.3.3 PC</a>
-    <a href="https://www.mediafire.com/file/v8fbh4eyee1k2zu/geometry-dash_2.2.144.apk/file" target="_blank">🌍 تحميل Geometry_Dash_v2.2 APK</a>
-    <a href="https://www.mediafire.com/file/uodq0a54ty8d0qz/minecraft_1.21.90.apk/file" target="_blank">🌍 تحميل Minecraft 1.21.90 APK</a>
-    <a href="https://www.mediafire.com/file/ogb3now7mwvchp2/soul-knight_v7.2.0.apk/file" target="_blank">🌍 تحميل soul knight v7.2.0 APK</a>
-    <a href="https://www.mediafire.com/file/muxhk6xe3s540li/minecraft+pe+0.12.3.zip/file" target="_blank">🌍 تحميل Minecraft PE 0.12.3 APK (اقدم اصدار)</a>
-    للمزيد من الالعاب تابعونا على صفحاتنا على اليوتيوب والجايم جولت
-  </section>
+    <section class="downloads fade-in" id="downloads">
+      <h2>🎮 تحميل ألعاب</h2>
+      <div class="downloads-grid">
+        <div class="download-card">
+          <a href="https://www.mediafire.com/file/16rxtg22hl9j3sq/Geometry_Dash_v2.204a_By_Mr%252C_Gaming-X.rar/file" target="_blank">
+            🎮 تحميل Geometry Dash 2.2 PC
+          </a>
+        </div>
+        <div class="download-card">
+          <a href="https://www.mediafire.com/file/y7homu610vbegt2/Retro+Pack.zip/file" target="_blank">
+            🕹️ تحميل Retro Games Pack PC
+          </a>
+        </div>
+        <div class="download-card">
+          <a href="https://www.mediafire.com/file/uh1gcn2yf879aiz/Minecraft+Pack.zip/file" target="_blank">
+            🌍 تحميل Minecraft PC
+          </a>
+        </div>
+        <div class="download-card">
+          <a href="https://www.mediafire.com/file/mda1flproo5x25d/pocketfighterex-v0.3.3-32bit.zip/file" target="_blank">
+            ⚔️ تحميل Pocket Fighter EX v0.3.3 PC
+          </a>
+        </div>
+        <div class="download-card">
+          <a href="https://www.mediafire.com/file/v8fbh4eyee1k2zu/geometry-dash_2.2.144.apk/file" target="_blank">
+            📱 تحميل Geometry Dash v2.2 APK
+          </a>
+        </div>
+        <div class="download-card">
+          <a href="https://www.mediafire.com/file/uodq0a54ty8d0qz/minecraft_1.21.90.apk/file" target="_blank">
+            📱 تحميل Minecraft 1.21.90 APK
+          </a>
+        </div>
+        <div class="download-card">
+          <a href="https://www.mediafire.com/file/ogb3now7mwvchp2/soul-knight_v7.2.0.apk/file" target="_blank">
+            ⚔️ تحميل Soul Knight v7.2.0 APK
+          </a>
+        </div>
+        <div class="download-card">
+          <a href="https://www.mediafire.com/file/muxhk6xe3s540li/minecraft+pe+0.12.3.zip/file" target="_blank">
+            📱 تحميل Minecraft PE 0.12.3 APK (أقدم إصدار)
+          </a>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 30px; font-size: 1.1rem;">
+        للمزيد من الألعاب تابعونا على صفحاتنا على اليوتيوب والـ GameJolt
+      </p>
+    </section>
 
-  <section class="gamejolt" id="gamejolt">
-    <h2>حسابات GameJolt</h2>
-    <a href="https://gamejolt.com/@-MonSun-SS" target="_blank">🔗 MaroGamerYT على GameJolt</a>
-    <a href="https://gamejolt.com/@MrGamingX" target="_blank">🔗 MrGamingX على GameJolt</a>
-  </section>
+    <section class="gamejolt fade-in" id="gamejolt">
+      <h2>⚡ حسابات GameJolt</h2>
+      <div class="link-card">
+        <a href="https://gamejolt.com/@-MonSun-SS" target="_blank">
+          ⚡ MaroGamerYT على GameJolt
+        </a>
+      </div>
+      <div class="link-card">
+        <a href="https://gamejolt.com/@MrGamingX" target="_blank">
+          ⚡ MrGamingX على GameJolt
+        </a>
+      </div>
+    </section>
 
-  <section class="about" id="about">
-    <h2>عن القناة</h2>
-    <p>
-      نحن نقدم لكم محتوى على يوتيوب يتكون من جيومتري داش والعاب الريترو وماين كرافت ونحن نسعى دائما لاسعادكم.
-      ووضعنا في هذا الموقع الألعاب التي نلعبها كجيومتري داش، ماين كرافت، والعاب الريترو، ووضعنا فيه أيضاً معلومات عنا.
-    </p>
-    <p>
-      🔗 <a href="https://www.youtube.com/@MrGamingX20321_MC-GD-RG" target="_blank">قناة Mr. Gaming-X</a><br>
-      🔗 <a href="https://www.youtube.com/@chahine-w2u" target="_blank">قناة MaroGamerYT</a>
-    </p>
-  </section>
+    <section class="about fade-in" id="about">
+      <h2>👾 عن القناة</h2>
+      <p>
+        نحن نقدم لكم محتوى على يوتيوب يتكون من جيومتري داش وألعاب الريترو وماين كرافت ونحن نسعى دائماً لإسعادكم.
+        ووضعنا في هذا الموقع الألعاب التي نلعبها كجيومتري داش، ماين كرافت، وألعاب الريترو، ووضعنا فيه أيضاً معلومات عنا.
+      </p>
+      <div class="channel-links">
+        <a href="https://www.youtube.com/@MrGamingX20321_MC-GD-RG" target="_blank" class="channel-link">
+          📺 قناة Mr. Gaming-X
+        </a>
+        <a href="https://www.youtube.com/@chahine-w2u" target="_blank" class="channel-link">
+          📺 قناة MaroGamerYT
+        </a>
+      </div>
+    </section>
 
-  <section class="form-link" id="upload">
-    <h2>📤 ارفع لعبتك</h2>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5_C9JXRmzR_SX9nYrI2foqycXlrXdEd5XRTrkdUfKoWK68w/viewform?usp=sf_link" target="_blank">
-      اضغط هنا لرفع لعبتك عبر Google Form
-    </a>
-  </section>
+    <section class="form-link fade-in" id="upload">
+      <h2>📤 ارفع لعبتك</h2>
+      <div class="link-card">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc5_C9JXRmzR_SX9nYrI2foqycXlrXdEd5XRTrkdUfKoWK68w/viewform?usp=sf_link" target="_blank">
+          📤 اضغط هنا لرفع لعبتك عبر Google Form
+        </a>
+      </div>
+    </section>
 
-  <section class="contact" id="contact">
-    <h2>تواصل معنا</h2>
-    <p>للتواصل التجاري أو التعاون، راسلنا عبر:</p>
-    <p>Email: ahmedrez11111@gmail.com</p>
-  </section>
+    <section class="contact fade-in" id="contact">
+      <h2>📧 تواصل معنا</h2>
+      <div class="contact-info">
+        <p>للتواصل التجاري أو التعاون، راسلنا عبر:</p>
+        <div style="margin: 20px 0;">
+          <a href="mailto:ahmedrez11111@gmail.com" class="email-link">
+            📧 ahmedrez11111@gmail.com
+          </a>
+        </div>
+        <div style="margin: 20px 0;">
+          <a href="mailto:gamerchahine1998@gmail.com" class="email-link">
+            📧 gamerchahine1998@gmail.com
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <footer>
-    &copy; 2025 MrGamingX & MaroGamerYT. جميع الحقوق محفوظة.
+    <p>&copy; 2025 MrGamingX & MaroGamerYT. جميع الحقوق محفوظة.</p>
   </footer>
+
+  <script>
+    // Create animated particles
+    function createParticles() {
+      const particlesContainer = document.querySelector('.particles');
+      const particleCount = 50;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.top = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Scroll animations
+    function checkScrollAnimation() {
+      const elements = document.querySelectorAll('.fade-in');
+      const windowHeight = window.innerHeight;
+
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          element.classList.add('visible');
+        }
+      });
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      checkScrollAnimation();
+    });
+
+    window.addEventListener('scroll', checkScrollAnimation);
+  </script>
 </body>
 </html>
